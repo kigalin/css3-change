@@ -1,0 +1,217 @@
+*{
+	margin:0;
+	padding:0;
+	border:none;
+}
+html{
+	width:100%;
+	height:100%;
+}
+body{
+	width:100%;
+	height:100%;
+	background:#FB966E;
+}
+.container{
+	width:600px;
+	height:400px;
+	border:20px solid rgba(255,255,255,0.5);
+	border-radius:10%; 
+	position:absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	margin:auto;
+	overflow: hidden;
+}
+input{
+	display:none;
+}
+label{
+	text-align: center;
+	width:150px;
+	height:30px;
+	float:left;
+	margin-top:350px;
+	position:relative;
+	color:rgba(255,255,255,0.8);
+	font-family: "PmingLiu";
+	font-weight: bold;
+	line-height:30px;
+	cursor: pointer;
+	z-index: 1000;
+}
+label:before{
+	content:"";
+	width:30px;
+	height:30px;
+	border-radius: 50%;
+	background:rgba(0,0,0,0.3);
+	position:absolute;
+	right:50%;
+	margin-right: -15px;
+	box-shadow: 0 0 0 4px rgba(255,255,255,0.1);
+	z-index:-1;
+}
+label:after{
+	content:"";
+	width:1px;
+	height:400px;
+	position:absolute;
+	right:0;
+	bottom:-20px;
+	background:-webkit-linear-gradient(transparent, #fff,transparent);
+	background:   -moz-linear-gradient(transparent, #fff,transparent);
+	background:     -o-linear-gradient(transparent, #fff,transparent);
+	background:    -ms-linear-gradient(transparent, #fff,transparent);
+	background:        linear-gradient(transparent, #fff,transparent);
+}
+.selectLb4:after{
+	width:0;
+}
+input.selectRd1:checked~label.selectLb1:before,
+input.selectRd2:checked~label.selectLb2:before,
+input.selectRd3:checked~label.selectLb3:before,
+input.selectRd4:checked~label.selectLb4:before
+{
+	background:rgba(255,255,255,0.8);
+	box-shadow: 0 0 0 4px rgba(0,0,0,0.2)
+}
+input.selectRd1:checked~label.selectLb1,
+input.selectRd2:checked~label.selectLb2,
+input.selectRd3:checked~label.selectLb3,
+input.selectRd4:checked~label.selectLb4
+{
+	color:rgba(0,0,0,0.6);
+}
+.bgImg{
+	width:100%;
+	height:100%;
+	position:absolute;
+}
+.bgImg div{
+	width:150px;
+	height:100%;
+	float:left;
+	position: relative;
+	overflow: hidden;
+}
+.bgImg div span{
+	width:100%;
+	height:100%;
+	position: absolute;
+	top: 0;
+	left: -150px;
+}
+input.selectRd1:checked~.bgImg,
+.bgImg div span:nth-child(1)
+{
+	background:url(images/1.jpg);
+}
+input.selectRd2:checked~.bgImg,
+.bgImg div span:nth-child(2){
+	background:url(images/2.jpg);
+}
+input.selectRd3:checked~.bgImg,
+.bgImg div span:nth-child(3){
+	background:url(images/3.jpg);
+}
+input.selectRd4:checked~.bgImg,
+.bgImg div span:nth-child(4){
+	background:url(images/4.jpg);
+}
+.bgImg div:nth-child(1) span{
+	background-position: 0px 0px;
+}
+.bgImg div:nth-child(2) span{
+	background-position: -150px 0px;
+}
+.bgImg div:nth-child(3) span{
+	background-position: -300px 0px;
+}
+.bgImg div:nth-child(4) span{
+	background-position: -450px 0px;
+}
+input.selectRd1:checked~.bgImg div span:nth-child(1),
+input.selectRd2:checked~.bgImg div span:nth-child(2),
+input.selectRd3:checked~.bgImg div span:nth-child(3),
+input.selectRd4:checked~.bgImg div span:nth-child(4){
+	-webkit-transition:left 0.5s ease-in-out;
+       -moz-transition:left 0.5s ease-in-out;
+         -o-transition:left 0.5s ease-in-out;
+        -ms-transition:left 0.5s ease-in-out;
+            transition:left 0.5s ease-in-out;
+	-webkit-animation: none;
+	   -moz-animation: none;
+	     -o-animation: none;
+	    -ms-animation: none;
+	        animation: none;
+	left:0px;
+	z-index: 10;
+}
+input:checked~.bgImg div span{
+	-webkit-animation:out 0.5s ease-in-out;
+       -moz-animation:out 0.5s ease-in-out;
+         -o-animation:out 0.5s ease-in-out;
+        -ms-animation:out 0.5s ease-in-out;
+            animation:out 0.5s ease-in-out;
+}
+-webkit-@keyframes out{
+	from{left:0;}
+	to{left:150px;}
+}
+   -moz-@keyframes out{
+	from{left:0;}
+	to{left:150px;}
+}
+     -o-@keyframes out{
+	from{left:0;}
+	to{left:150px;}
+}
+    -ms-@keyframes out{
+	from{left:0;}
+	to{left:150px;}
+}
+        @keyframes out{
+	from{left:0;}
+	to{left:150px;}
+}
+.text h1{
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	top: 10%;
+	z-index: 100;
+	color: #fff;
+	opacity:0;
+}
+.text h1 span:first-child{
+	font-family: "华文细黑";
+	font-weight: bold;
+	font-size:50px;
+	display:block;
+	letter-spacing: 10px;
+	text-shadow:1px 1px 2px #000;
+}
+.text h1 span:last-child{
+	font-family: "华文细黑";
+	font-size:20px;
+	font-weight: lighter;
+	display:block;
+	background: rgba(255,255,255,0.3);
+	margin-top:5px;
+	text-shadow:1px 1px 1px #000;
+}
+input.selectRd1:checked~.text h1:nth-child(1),
+input.selectRd2:checked~.text h1:nth-child(2),
+input.selectRd3:checked~.text h1:nth-child(3),
+input.selectRd4:checked~.text h1:nth-child(4)
+{
+	opacity:1;
+	-webkit-transition:opacity 1s ease-in-out;
+       -moz-transition:opacity 1s ease-in-out;
+         -o-transition:opacity 1s ease-in-out;
+        -ms-transition:opacity 1s ease-in-out;
+            transition:opacity 1s ease-in-out;
+}
